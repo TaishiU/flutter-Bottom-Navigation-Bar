@@ -30,13 +30,6 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  // static const TextStyle optionStyle =
-  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   HomeScreen(),
-  //   SearchScreen(),
-  //   NotificationsScreen(),
-  // ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -48,7 +41,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('BottomNavigationBar'),
       ),
       body: [
         HomeScreen(),
@@ -66,12 +59,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.phonelink_lock),
+            icon: Icon(Icons.notifications),
             label: 'Notification',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
     );
